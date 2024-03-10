@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Controle de Usuário</title>
+    
+    <script type="text/javascript">
+    	function confirmarDeleteUsuario(codigo, login, sexo) {
+        	if (confirm('Confirmar a exclusão do usuário [' + login + '] (Codigo ' + codigo + ') com sexo ' + sexo)) {
+            	location.href = '/usuario/delete/' + codigo;
+        	}
+    	}
+
+    	function onLoad() {
+        	var msgElement = document.getElementById("msg");
+        	if(msgElement && msgElement.value !== "") {
+            	alert(msgElement.value);
+       	 	}
+    	}
+	</script>
+
+	
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .input--main__style {
+            background-color: #00FF00;
+        }
+
+        .input--button {
+            font-weight: bold;
+            font-family: Arial;
+            font-size: medium;
+            border-color: transparent;
+            display: block;
+            margin: 0px auto;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .input--register {
+            display: inline;
+        }
+
+        input {
+            display: block;
+            border-radius: 7px;
+            padding: 10px;
+            border-style: solid;
+            border-color: lightgray;
+            color: black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        form p {
+            text-align: initial;
+            display: inline;
+            margin-left: 15px;
+        }
+
+        .p--nomargin {
+            margin-left: 0px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body onload="onLoad()">
+    <h1>Controle de Usuarios</h1>
+    <input type="hidden" id="msg" name="msg" value="">
+    <UM-USUARIO></UM-USUARIO>
+    <br>
+    <LISTAR-USUARIO></LISTAR-USUARIO>
+</body>
+
+</html>
