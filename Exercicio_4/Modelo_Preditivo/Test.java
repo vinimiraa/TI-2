@@ -12,7 +12,7 @@ public class Test
 		
 		HttpClient client = HttpClient.newHttpClient();
 		HttpRequest req = HttpRequest.newBuilder()
-						.uri(URI.create(url)).header("Content-Type","application/json").header("Authorization","Bearer MINHA CHAVE").header("Accept","application/json")
+						.uri(URI.create(url)).header("Content-Type","application/json").header("Authorization","Bearer MINHA CHAVE==").header("Accept","application/json")
 						.POST(HttpRequest.BodyPublishers.ofString(body))
 						.build();
 		HttpResponse<String> resp = client.send(req,HttpResponse.BodyHandlers.ofString());
